@@ -35,7 +35,7 @@ node('linux') {
             extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: 'appimage-template']], submoduleCfg: [], \
             userRemoteConfigs: [[url: 'https://github.com/appimage-packages/appimage-template']]]
             checkout changelog: false, poll: false, scm: [$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, \
-            extensions: [[$class: 'CleanBeforeCheckout'],[$class: 'RelativeTargetDirectory', relativeTargetDir: 'kexi']], submoduleCfg: [], userRemoteConfigs: [[url: 'https://anongit.kde.org/kexi']]]
+            extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: 'kexi']], submoduleCfg: [], userRemoteConfigs: [[url: 'https://anongit.kde.org/kexi']]]
        }
         stage( 'Setup' ) {
             sh 'bundle install'
