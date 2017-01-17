@@ -46,6 +46,7 @@ frameworks:
     - kparts
     - syntax-highlighting
     - ktexteditor
+    - kdb
 type: git
 url: http://anongit.kde.org/kexi
 buildsystem: cmake
