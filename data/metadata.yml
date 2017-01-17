@@ -43,6 +43,7 @@ frameworks:
     - kpackage
     - kdeclarative
     - plasma-framework
+    - ktexteditor
 type: git
 url: http://anongit.kde.org/kexi
 buildsystem: cmake
