@@ -47,6 +47,7 @@ frameworks:
     - syntax-highlighting
     - ktexteditor
     - kdb
+    - kproperty
     - kreport
 type: git
 url: http://anongit.kde.org/kexi
