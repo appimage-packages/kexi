@@ -36,7 +36,8 @@ cd /<%= name %>.AppDir
 #Move binary/desktop/icon into AppDir
 mv /opt/usr/bin/<%= name %>* .
 mv /opt/usr/share/applications/*<%= name %>*.desktop <%= name %>.desktop
-cp /opt/usr/share/icons/hicolor/48x48/apps/*<%= name %>* .
+#kexi has a special case for icon, do not change
+cp /in/kexi.svg kexi.svg
 
 
 #All the plugins do not seem to be getting in. Manual copy.
