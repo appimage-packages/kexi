@@ -1,6 +1,7 @@
 name: kexi
 packages:
   #app specifc
+  - postgresql-common
   - postgresql-server-dev-all
   - postgresql
   - libgit2-dev
