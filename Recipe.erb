@@ -93,6 +93,8 @@ rm -rf ./usr/share/man || true
 rm -rf ./usr/share/doc/ECM || true
 rm -rf ./usr/share/doc/libdbusmenu-qt5-doc || true
 rm -rf ./usr/share/gtk-doc || true
+# libgcrypt depends on mesa and thus breaking all non ubuntu/debian appimage launches.
+rm -rf ./lib/libgcrypt*  || true
 #Huge.. see if we can function without it
 rm ./lib/libQt5WebEngineCore.so.5
 find . -name '*.a' -exec rm {} \;

@@ -1,6 +1,9 @@
 name: kexi
-packages: ''
+packages:
   #app specifc
+  - postgresql-server-dev-9.5
+  - postgresql
+  - libgit2-dev
 frameworks:
   build_kf5: true
   frameworks:
@@ -41,14 +44,13 @@ frameworks:
     - breeze-icons
     - kactivities
     - kpackage
-    - kdeclarative
-    - plasma-framework
     - kparts
     - syntax-highlighting
     - ktexteditor
     - kdb
     - kproperty
     - kreport
+    - marble
 type: git
 url: http://anongit.kde.org/kexi
 buildsystem: cmake
