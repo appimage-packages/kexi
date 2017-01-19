@@ -1,7 +1,7 @@
 name: kexi
 packages:
   #app specifc
-  - postgresql-server-dev-9.5
+  - postgresql-server-dev-all
   - postgresql
   - libgit2-dev
 frameworks:
