@@ -1,9 +1,9 @@
 name: kexi
 packages:
   #app specifc
-  - postgresql-common
-  - postgresql-server-dev-all
-  - postgresql
+  - postgresql-common=151.pgdg12.4+1
+  - postgresql-9.3
+  - postgresql-contrib-9.3
   - libgit2-dev
 frameworks:
   build_kf5: true
