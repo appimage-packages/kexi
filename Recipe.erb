@@ -34,15 +34,13 @@ chmod a+x linuxdeployqt-1-x86_64.AppImage
 cd /<%= name %>.AppDir
 
 #Move binary/desktop/icon into AppDir
-mv /opt/usr/bin/<%= name %>* <%= name %>
+mv /opt/usr/bin/<%= name %> .
 mv /opt/usr/share/applications/*<%= name %>*.desktop <%= name %>.desktop
-#kexi has a special case for icon, do not change
-cp /in/kexi.svg kexi.svg
+cp /opt/usr/share/icons/hicolor/48x48/apps/*<%= name %>* .
 
 
 #All the plugins do not seem to be getting in. Manual copy.
 mkdir -p ./plugins; cp -rfv /opt/usr/lib/qt5/plugins/phonon4qt5_backend $_
-cp -rfv /opt/usr/plugins/<%= name %> ./plugins || true
 #mkdir -p ./usr/lib/qml/
 mkdir -p ./usr/{share,bin,lib}
 mkdir ./etc
@@ -51,7 +49,7 @@ rsync -aruxv --progress /opt/usr/share/ ./usr/share/
 rsync -aruxv --progress /opt/etc/ ./etc/
 rsync -aruxv --progress /opt/usr/qml/ ./qml
 cp /usr/lib/x86_64-linux-gnu/pulseaudio/*.so* ./usr/lib/
-
+ls /opt/usr/lib/libg*
 cp /opt/usr/bin/gst* ./usr/bin/
 mkdir ./lib
 rm -rfv /opt/usr/lib/gstreamer-1.0/include
@@ -61,10 +59,11 @@ cp -rfv /usr/share/mime ./usr/share/
 cp /etc/mime.types ./etc/
 update-mime-database ./usr/share/mime
 
-strip -g $(find usr/bin) || true
-strip -g $(find usr/lib) || true
+strip -g $(find ./usr/bin) || true
+strip -g $(find ./usr/lib) || true
 
 mv /opt/usr/libexec/kf5/* ./usr/bin/ || true
+mv /opt/usr/lib/x86_64-linux-gnu/libexec/kf5/* ./usr/bin/ || true
 mv /opt/usr/libexec/gstreamer-1.0/* ./usr/bin || true
 cp -rfv /opt/usr/lib/x86_64-linux-gnu/* /opt/usr/lib/
 unset LD_LIBRARY_PATH
@@ -93,10 +92,9 @@ rm -rf ./usr/share/man || true
 rm -rf ./usr/share/doc/ECM || true
 rm -rf ./usr/share/doc/libdbusmenu-qt5-doc || true
 rm -rf ./usr/share/gtk-doc || true
-# libgcrypt depends on mesa and thus breaking all non ubuntu/debian appimage launches.
-rm -rf ./lib/libgcrypt*  || true
-#Huge.. see if we can function without it
-rm ./lib/libQt5WebEngineCore.so.5
+rm -rf ./usr/share/wallpapers || true
+# libEGL crash on non debian platforms
+rm -f ./lib/libEGL*
 find . -name '*.a' -exec rm {} \;
 get_desktopintegration <%= name %>
 cd /app/src
@@ -118,8 +116,8 @@ export QML2_IMPORT_PATH=\$HERE/qml
 export QT_PLUGIN_PATH=\$HERE/plugins
 export PATH=\$HERE/usr/bin/:\$HERE/usr/sbin/:\$HERE/usr/games/:\$HERE/bin/:\$HERE/sbin/:$PATH
 export LD_LIBRARY_PATH=\$HERE/usr/lib/:\$HERE/usr/lib/x86_64-linux-gnu/:\$HERE/usr/lib64/:\$HERE/lib/:\$HERE/lib/x86_64-linux-gnu/:\$HERE/lib64/:$LD_LIBRARY_PATH
-export XDG_DATA_DIRS=\$HERE/usr/share:$HOME/.local/share:/usr/local/share/:/usr/share:$XDG_DATA_DIRS
-export XDG_DATA_HOME=$HOME/.local/share
+export XDG_DATA_DIRS=\$HERE/usr/share:\$HOME/.local/share:/usr/local/share/:/usr/share:$XDG_DATA_DIRS
+export XDG_DATA_HOME=\$HOME/.local/share
 export XDG_CONFIG_DIRS=\$HERE/etc/xdg:$XDG_CONFIG_DIRS
 export KDE_FORK_SLAVES=1
 export GST_PLUGIN_PATH=\$HERE/lib
@@ -139,4 +137,9 @@ DATE=$(date +"%Y%m%d")
 
 APPIMAGEFILENAME="<%= name %>-git$DATE-$ARCH.AppImage"
 
-./appimagetool-x86_64.AppImage /<%= name %>.AppDir /appimage/$APPIMAGEFILENAME
+#Re set LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/opt/usr/lib:/opt/usr/lib/x86_64-linux-gnu:/usr/lib:/usr/lib64
+gpg2 --import /root/.gnupg/appimage.key
+./appimagetool-x86_64.AppImage -v -s -u "zsync|$APPIMAGEFILENAME" /<%= name %>.AppDir /appimage/$APPIMAGEFILENAME
+zsyncmake -u "https://s3-eu-central-1.amazonaws.com/ds9-apps/ark-appimage/master/$APPIMAGEFILENAME" -o /appimage/<%= name %>_latestversion.zsync /appimage/$APPIMAGEFILENAME
+ls /appimage/
