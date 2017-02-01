@@ -126,7 +126,7 @@ export GST_PLUGIN_SCANNER=\$HERE/bin
 <%= binary %> $@
 EOF
 chmod +x AppRun
-mv <%= name %> ./usr/bin/
+mv <%= binary %> ./usr/bin/
 cp <%= name %>.desktop ./usr/share/applications/
 cd /
 wget "https://github.com/probonopd/AppImageKit/releases/download/knowngood/appimagetool-x86_64.AppImage"
