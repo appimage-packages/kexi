@@ -34,8 +34,8 @@ chmod a+x linuxdeployqt-1-x86_64.AppImage
 cd /<%= name %>.AppDir
 
 #Move binary/desktop/icon into AppDir
-mv /opt/usr/bin/<%= binary %> .
-mv /opt/usr/share/applications/*<%= binary %>*.desktop <%= binary %>.desktop
+mv /opt/usr/bin/<%= binary %> <%= name %>
+mv /opt/usr/share/applications/*<%= binary %>*.desktop <%= name %>.desktop
 cp /in/kexi.svg .
 
 
@@ -123,11 +123,11 @@ export KDE_FORK_SLAVES=1
 export GST_PLUGIN_PATH=\$HERE/lib
 export GST_PLUGIN_SCANNER=\$HERE/bin
 
-<%= binary %> $@
+<%= name %> $@
 EOF
 chmod +x AppRun
-mv <%= binary %> ./usr/bin/
-cp <%= binary %>.desktop ./usr/share/applications/
+mv <%= name %> ./usr/bin/
+cp <%= name %>.desktop ./usr/share/applications/
 cd /
 wget "https://github.com/probonopd/AppImageKit/releases/download/knowngood/appimagetool-x86_64.AppImage"
 chmod a+x appimagetool-x86_64.AppImage
