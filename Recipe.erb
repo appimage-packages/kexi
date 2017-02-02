@@ -67,7 +67,7 @@ mv /opt/usr/lib/x86_64-linux-gnu/libexec/kf5/* ./usr/bin/ || true
 mv /opt/usr/libexec/gstreamer-1.0/* ./usr/bin || true
 cp -rfv /opt/usr/lib/x86_64-linux-gnu/* /opt/usr/lib/
 unset LD_LIBRARY_PATH
-../linuxdeployqt-1-x86_64.AppImage <%= binary %> -verbose=3 -bundle-non-qt-libs -qmldir=/opt/usr/qml
+../linuxdeployqt-1-x86_64.AppImage kexi-3.1 -verbose=3 -bundle-non-qt-libs -qmldir=/opt/usr/qml
 ls ./qml/
 patch_usr
 glibc_needed
