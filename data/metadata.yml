@@ -53,6 +53,7 @@ frameworks:
     - kproperty
     - kreport
     - marble
+    - kdecoration
     - breeze
 type: git
 url: http://anongit.kde.org/kexi
