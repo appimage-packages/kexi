@@ -5,6 +5,7 @@ packages:
   - postgresql-common
   - postgresql-9.3
   - postgresql-contrib-9.3
+  - postgresql-server-dev-9.3
   - libgit2-dev
 frameworks:
   build_kf5: true
