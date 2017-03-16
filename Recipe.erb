@@ -95,6 +95,8 @@ rm -rf ./usr/share/gtk-doc || true
 rm -rf ./usr/share/wallpapers || true
 # libEGL crash on non debian platforms
 rm -f ./lib/libEGL*
+#Add back libkrb5
+cp /usr/lib/x86_64-linux-gnu/libkrb5* ./lib/
 find . -name '*.a' -exec rm {} \;
 get_desktopintegration <%= name %>
 cd /app/src
