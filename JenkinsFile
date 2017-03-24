@@ -38,11 +38,11 @@ node('linux') {
             extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: 'kexi']], submoduleCfg: [], userRemoteConfigs: [[url: 'https://anongit.kde.org/kexi']]]
        }
         stage( 'Setup' ) {
-            sh 'bundle install'
+            sh 'rbenv local 2.3.0 && bundle install'
             def WORKSPACE=pwd()
         }
         stage( 'Build' ) {
-            sh 'rbenv local 2.3.0 && bundle exec deploy.rb'
+            sh 'bundle exec deploy.rb'
        }
        stage('Copy Artifacts') {
           step([$class: 'S3BucketPublisher', consoleLogLevel: 'INFO', dontWaitForConcurrentBuildCompletion: false, entries: [[bucket: "ds9-apps/${JOB_NAME}", excludedFile: '', flatten: false, gzipFiles: false, keepForever: false, \
