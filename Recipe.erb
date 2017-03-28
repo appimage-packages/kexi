@@ -95,12 +95,12 @@ rm -rf ./usr/share/gtk-doc || true
 rm -rf ./usr/share/wallpapers || true
 
 # Many assets are not needed... especially not twice (icons are rcc packaged)
-rm -rf usr/share/wallpapers
-rm -rf usr/share/icons/breeze_cursors
-rm -rf usr/share/icons/Breeze_Snow
-rm -rf usr/share/icons/breeze/{places,mimetypes,devices,apps,applets,actions,status,emotes,emblems}
-rm -rf usr/share/icons/breeze-dark/{places,mimetypes,devices,apps,applets,actions,status,emotes,emblems}
-rm -rf usr/share/emoticons
+rm -rf ./usr/share/wallpapers
+rm -rf ./usr/share/icons/breeze_cursors
+rm -rf ./usr/share/icons/Breeze_Snow
+rm -rf ./usr/share/icons/breeze/{places,mimetypes,devices,apps,applets,actions,status,emotes,emblems}
+rm -rf ./usr/share/icons/breeze-dark/{places,mimetypes,devices,apps,applets,actions,status,emotes,emblems}
+rm -rf ./usr/share/emoticons
 
 # libEGL crash on non debian platforms
 rm -f ./lib/libEGL*
