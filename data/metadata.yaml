@@ -50,11 +50,11 @@ frameworks:
   - syntax-highlighting
   - ktexteditor
   - kdecoration
-deps_on_kf5:
+deps_on_kf5: false
+kde_deps:
   - kdb
   - kproperty
   - kreport
-kde_deps:
   - marble
   - breeze
 type: git
