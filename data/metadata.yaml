@@ -7,55 +7,56 @@ packages:
   - postgresql-contrib-9.3
   - postgresql-server-dev-9.3
   - libgit2-dev
+build_kf5: true
 frameworks:
-  build_kf5: true
-  frameworks:
-    - extra-cmake-modules
-    - kcoreaddons
-    - ki18n
-    - kitemviews
-    - kconfig
-    - polkit-qt-1
-    - kauth
-    - kcodecs
-    - karchive
-    - kdoctools
-    - kguiaddons
-    - kwidgetsaddons
-    - kconfigwidgets
-    - kiconthemes
-    - kcompletion
-    - kwindowsystem
-    - kcrash
-    - kdbusaddons
-    - kservice
-    - sonnet
-    - ktextwidgets
-    - kglobalaccel
-    - attica
-    - kxmlgui
-    - solid
-    - kbookmarks
-    - kjobwidgets
-    - phonon
-    - phonon-gstreamer
-    - knotifications
-    - gpgmepp
-    - kwallet
-    - kio
-    - knewstuff
-    - breeze-icons
-    - kactivities
-    - kpackage
-    - kparts
-    - syntax-highlighting
-    - ktexteditor
-    - kdb
-    - kproperty
-    - kreport
-    - marble
-    - kdecoration
-    - breeze
+  - extra-cmake-modules
+  - kcoreaddons
+  - ki18n
+  - kitemviews
+  - kconfig
+  - polkit-qt-1
+  - kauth
+  - kcodecs
+  - karchive
+  - kdoctools
+  - kguiaddons
+  - kwidgetsaddons
+  - kconfigwidgets
+  - kiconthemes
+  - kcompletion
+  - kwindowsystem
+  - kcrash
+  - kdbusaddons
+  - kservice
+  - sonnet
+  - ktextwidgets
+  - kglobalaccel
+  - attica
+  - kxmlgui
+  - solid
+  - kbookmarks
+  - kjobwidgets
+  - phonon
+  - phonon-gstreamer
+  - knotifications
+  - gpgmepp
+  - kwallet
+  - kio
+  - knewstuff
+  - breeze-icons
+  - kactivities
+  - kpackage
+  - kparts
+  - syntax-highlighting
+  - ktexteditor
+  - kdecoration
+deps_on_kf5:
+  - kdb
+  - kproperty
+  - kreport
+kde_deps:
+  - marble
+  - breeze
 type: git
 url: http://anongit.kde.org/kexi
 buildsystem: cmake
