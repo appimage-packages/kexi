@@ -28,7 +28,7 @@ cd /app.Dir
 #Move binary/desktop/icon into AppDir
 mv /app.Dir/usr/bin/<%= binary %> .
 mv /app.Dir/usr/share/applications/org.kde.<%= binary %>.desktop <%= binary %>.desktop
-cp /app.Dir/usr/share/icons/hicolor/48x48/apps/*<%= name %>* .
+cp /in/kexi.svg .
 
 mkdir ./etc; cp /etc/mime.types $_
 
