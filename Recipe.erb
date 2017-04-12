@@ -46,7 +46,7 @@ rmdir /opt/usr/lib/x86_64-linux-gnu/pkgconfig
 mv /opt/usr/lib/x86_64-linux-gnu/cmake/* /opt/usr/lib/cmake/
 rmdir /opt/usr/lib/x86_64-linux-gnu/cmake
 mv /opt/usr/lib/x86_64-linux-gnu/* /opt/usr/lib/
-
+mv /app.Dir/usr/lib/x86_64-linux-gnu/* ./lib/
 mkdir ./lib
 #Uncomment for sound
 cp -rfv /opt/usr/lib/qt5/plugins/phonon4qt5_backend ./plugins/
@@ -163,4 +163,4 @@ rm -rfv /source/*
 
 
 #Re set LD_LIBRARY_PATH
-export LD_LIBRARY_PATH=/app.Dir/usr/lib://app.Dir/usr/lib/x86_64-linux-gnu:/opt/usr/lib:/opt/usr/lib/x86_64-linux-gnu:/usr/lib:/usr/lib64:/lib
+export LD_LIBRARY_PATH=/app.Dir/usr/lib:/opt/usr/lib:/opt/usr/lib/x86_64-linux-gnu:/usr/lib:/usr/lib64:/lib
