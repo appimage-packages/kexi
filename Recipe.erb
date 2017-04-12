@@ -46,8 +46,9 @@ rmdir /opt/usr/lib/x86_64-linux-gnu/pkgconfig
 mv /opt/usr/lib/x86_64-linux-gnu/cmake/* /opt/usr/lib/cmake/
 rmdir /opt/usr/lib/x86_64-linux-gnu/cmake
 mv /opt/usr/lib/x86_64-linux-gnu/* /opt/usr/lib/
-mv /app.Dir/usr/lib/x86_64-linux-gnu/* ./lib/
+
 mkdir ./lib
+mv /app.Dir/usr/lib/x86_64-linux-gnu/* ./lib/
 #Uncomment for sound
 cp -rfv /opt/usr/lib/qt5/plugins/phonon4qt5_backend ./plugins/
 cp /usr/lib/x86_64-linux-gnu/pulseaudio/*.so* ./usr/lib/
