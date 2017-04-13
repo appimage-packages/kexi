@@ -39,7 +39,8 @@ update-mime-database ./usr/share/mime
 mkdir -p ./plugins; cp -r /opt/usr/plugins/{bearer,generic} $_
 # Bring in kf5 plugins
 mv /opt/usr/plugins/kf5/* ./plugins/ || true
-
+mv /app.Dir/usr/lib/x86_64-linux-gnu/plugins/* ./plugins/ || true
+rmdir /app.Dir/usr/lib/x86_64-linux-gnu/plugins
 #move arch libs into same dir as rest
 mv /opt/usr/lib/x86_64-linux-gnu/pkgconfig/* /opt/usr/lib/pkgconfig/
 rmdir /opt/usr/lib/x86_64-linux-gnu/pkgconfig
