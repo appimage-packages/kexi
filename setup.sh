@@ -105,4 +105,4 @@ else
 fi
 
 
-#rm -rfv /source/*
+rm -rfv /source/*
