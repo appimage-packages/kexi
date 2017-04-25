@@ -50,12 +50,14 @@ frameworks:
   - syntax-highlighting
   - ktexteditor
   - kdecoration
+  - framework-integration
+  - kcmutils
 deps_on_kf5: false
 kde_deps:
+  - marble
   - kdb
   - kproperty
   - kreport
-  - marble
   - breeze
 type: git
 url: http://anongit.kde.org/kexi
