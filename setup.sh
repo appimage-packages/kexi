@@ -53,7 +53,7 @@ chmod a+x linuxdeployqt-1-x86_64.AppImage
 set -e
 set -x
 export PATH=/opt/usr/bin:/root/.rbenv/bin:/root/.rbenv/shims:$PATH
-export CPATH=/opt/usr/include/gstreamer-1.0:/opt/usr/include:/opt/usr/include/python3.5:/usr/include:/usr/include/postgresql/9.3/server
+export CPATH=/opt/usr/include/gstreamer-1.0:/opt/usr/include:/opt/usr/include/python3.5:/usr/include:/usr/include/postgresql/9.3/server:/usr/include/postgresql
 ln -s /usr/bin/clang++-3.8 /usr/bin/clang++
 ln -s /usr/bin/clang-3.8 /usr/bin/clang
 # rm /usr/bin/python && ln -s /opt/usr/bin/python3 /usr/bin/python
