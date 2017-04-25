@@ -1,7 +1,6 @@
 name: kexi
 binary: kexi-3.1
 packages:
-  #app specifc
   - postgresql-common
   - postgresql-9.3
   - postgresql-contrib-9.3
@@ -50,7 +49,6 @@ frameworks:
   - syntax-highlighting
   - ktexteditor
   - kdecoration
-  - framework-integration
   - kcmutils
 deps_on_kf5: false
 kde_deps:
