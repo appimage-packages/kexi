@@ -1,6 +1,7 @@
 name: kexi
 binary: kexi-3.1
-packages: false
+packages:
+  - libgit2-dev
 build_kf5: true
 frameworks:
   - extra-cmake-modules
