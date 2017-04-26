@@ -1,12 +1,6 @@
 name: kexi
 binary: kexi-3.1
-packages:
-  - postgresql-common
-  - postgresql-9.3
-  - postgresql-contrib-9.3
-  - postgresql-server-dev-9.3
-  - libgit2-dev
-  - libpq-dev
+packages: false
 build_kf5: true
 frameworks:
   - extra-cmake-modules
